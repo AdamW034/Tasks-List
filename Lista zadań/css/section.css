@@ -55,4 +55,5 @@
 
 .section__listItem {
     text-decoration: line-through;
+    border-bottom: 1px solid rgb(236, 234, 234);
 }
