@@ -1,0 +1,54 @@
+.section {
+    display: grid;
+    grid-template-rows: minmax(100, auto);
+    grid-gap: 2px;
+    margin: 10px 5%;
+}
+
+.section__container {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+.section__container--form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.section__header {
+    margin: 0;
+}
+
+.section__input {
+    padding: 5px;
+    margin: 5px 5px;
+    width: 84%;
+    max-width: 84%;
+}
+
+@media (max-width: 987px) {
+    .section__input {
+        width: 95%;
+        max-width: 95%;
+    }
+}
+
+.section__button {
+    padding: 5px;
+    margin: auto 5px;
+    background-color: teal;
+    color: white;
+    border-color: teal;
+}
+
+@media (max-width: 987px) {
+    .section__button {
+        width: 95%;
+        max-width: 95%;
+    }
+}
+
+.section__button:hover {
+    background-color: rgb(0, 146, 146);
+}
