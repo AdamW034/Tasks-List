@@ -52,3 +52,7 @@
 .section__button:hover {
     background-color: rgb(0, 146, 146);
 }
+
+.section__listItem {
+    text-decoration: line-through;
+}
