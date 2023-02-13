@@ -53,13 +53,23 @@
     background-color: rgb(0, 146, 146);
 }
 
-.section__listItem {
-    text-decoration: line-through;
-    border-bottom: 1px solid rgb(236, 234, 234);
-}
-
 .section__list {
     list-style-type: none;
     display: flex;
     flex-direction: column;
+}
+
+.section__listItem {
+    text-decoration: line-through;
+    border-bottom: 1px solid rgb(236, 234, 234);
+    flex-basis: 100%;
+    
+}
+
+.section__button--done {
+    text-align: start;
+}
+
+.section__button--remove {
+    text-align: end;
 }

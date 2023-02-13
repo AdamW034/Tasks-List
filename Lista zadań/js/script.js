@@ -21,18 +21,7 @@
         render()
     };
 
-    const render = () => {
-        let htmlString = "";
-        
-        for (const task of tasks) {
-            htmlString += `
-            <li${task.done ? " class=\"section__listItem\"" : ""}>
-                <button class="js-done">Zrobione?</button>  ${task.content} <button class="js-remove">...</button>
-            </li>
-            `;
-        }
-
-        document.querySelector(".js-list").innerHTML = htmlString
+    const bindEvents = () => {
 
         const removeButtons = document.querySelectorAll(".js-remove");
 
@@ -49,6 +38,22 @@
                 toggleTaskDone(index)
            });
         });
+    };
+
+    const render = () => {
+        let htmlString = "";
+        
+        for (const task of tasks) {
+            htmlString += `
+            <li${task.done ? " class=\"section__listItem\"" : ""}>
+                <button class="section__button--done js-done">Zrobione?</button>  ${task.content} <button class="section__button--remove js-remove">...</button>
+            </li>
+            `;
+        }
+
+        document.querySelector(".js-list").innerHTML = htmlString
+
+        bindEvents()
     };
 
     
