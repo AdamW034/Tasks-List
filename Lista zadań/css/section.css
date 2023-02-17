@@ -1,19 +1,23 @@
 .section {
-    display: grid;
-    grid-template-rows: minmax(100, auto);
-    grid-gap: 2px;
-    margin: 10px 5%;
+    margin: 10px 0;
 }
 
 .section__container {
     background-color: rgb(255, 255, 255);
-    padding: 10px;
+    padding: 20px;
+    border: 1px solid rgb(236, 234, 234);
 }
 
-.section__container--form {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.section__form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 20px;
+}
+
+@media (max-width: 767px) {
+    .section__form {
+        grid-template-columns: 1fr;
+    };
 }
 
 .section__header {
@@ -21,32 +25,15 @@
 }
 
 .section__input {
-    padding: 5px;
-    margin: 5px 5px;
-    width: 84%;
-    max-width: 84%;
-}
-
-@media (max-width: 987px) {
-    .section__input {
-        width: 95%;
-        max-width: 95%;
-    }
+    padding: 10px;
+    border: 1px solid rgb(236, 234, 234);
 }
 
 .section__button {
-    padding: 5px;
-    margin: auto 5px;
+    padding: 10px;
     background-color: teal;
     color: white;
-    border-color: teal;
-}
-
-@media (max-width: 987px) {
-    .section__button {
-        width: 95%;
-        max-width: 95%;
-    }
+    border: none;
 }
 
 .section__button:hover {
@@ -55,21 +42,38 @@
 
 .section__list {
     list-style-type: none;
-    display: flex;
-    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
 .section__listItem {
-    text-decoration: line-through;
     border-bottom: 1px solid rgb(236, 234, 234);
-    flex-basis: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 10px;
+    align-items: center;
+    padding: 10px;
     
 }
 
-.section__button--done {
-    text-align: start;
+.section__listItem--done {
+    text-decoration: line-through;
 }
 
-.section__button--remove {
-    text-align: end;
+.section__buttonDone {
+    background-color: green;
+    color: white;
+    border: none;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+}
+
+.section__buttonRemove {
+    background-color: red;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    padding: 0;
 }
