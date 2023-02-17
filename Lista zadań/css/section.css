@@ -109,11 +109,26 @@
     grid-template-columns: 1fr auto;
 }
 
+@media (max-width: 767px) {
+    .section__container--toggleTasksDone {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    };
+}
+
 .section__buttons {
     color: teal;
     background-color: transparent;
     border: none;
     transition: 0.5s;
+}
+
+@media (max-width: 767px) {
+    .section__buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+    };
 }
 
 .section__buttons:hover {
