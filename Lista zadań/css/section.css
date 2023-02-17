@@ -34,10 +34,16 @@
     background-color: teal;
     color: white;
     border: none;
+    transition: 0.5s;
 }
 
 .section__button:hover {
     background-color: rgb(0, 146, 146);
+    transform: scale(1.1);
+}
+
+.section__button:active {
+    background-color: rgb(0, 165, 165);
 }
 
 .section__list {
@@ -67,6 +73,16 @@
     height: 30px;
     width: 30px;
     padding: 0;
+    transition: 0.5s;
+}
+
+.section__buttonDone:hover {
+    background-color: rgb(1, 150, 1);
+    transform: scale(1.2);
+}
+
+.section__buttonDone:active {
+    background-color: rgb(3, 175, 3);
 }
 
 .section__buttonRemove {
@@ -76,4 +92,39 @@
     width: 30px;
     height: 30px;
     padding: 0;
+    transition: 0.5s;
+}
+
+.section__buttonRemove:hover {
+    background-color: rgb(255, 37, 37);
+    transform: scale(1.2);
+}
+
+.section__buttonRemove:active {
+    background-color: rgb(255, 62, 62);
+}
+
+.section__container--toggleTasksDone {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.section__buttons {
+    color: teal;
+    background-color: transparent;
+    border: none;
+    transition: 0.5s;
+}
+
+.section__buttons:hover {
+    color: rgb(0, 146, 146);
+    transform: scale(1.1);
+}
+
+.section__buttons:active {
+    color: rgb(0, 165, 165);
+}
+
+.section__buttons--toggleTasksDone:disabled {
+    color: grey;
 }
