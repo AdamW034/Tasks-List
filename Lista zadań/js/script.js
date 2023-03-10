@@ -4,20 +4,32 @@
     const buttonsElement = document.querySelector(".js-buttons")
 
     const addNewTask = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent,
-        })
+       tasks = [
+            ...tasks,
+            {content: newTaskContent}
+        ]
 
         render();
     };
 
     const removeTask = (index) => {
-        tasks.splice(index, 1);
+       tasks = [
+            ...tasks.slice(0, index),
+            ...tasks.slice(index + 1),
+        ];
         render()
     };
 
     const toggleTaskDone = (index) => {
-        tasks[index].done = !tasks[index].done
+        tasks = [
+            ...tasks.slice(0, index),
+            {
+                ...tasks[index],
+                done: !tasks[index].done,
+            },
+            ...tasks.slice(index + 1),
+        ]
+        
         render()
     };
 
@@ -56,22 +68,28 @@
             toggleAllDoneButton.addEventListener("click", () => {
                 toggleAllTaskDone()
             });
-        } else {
-            return;
+        };
+
+        const hideDone = document.querySelector(".js-hideDoneTasks");
+
+        if (buttonsElement.innerHTML.includes("js-hideDoneTasks")) {
+            hideDone.addEventListener("click", () => {
+                toggleHideDoneTasks()
+            });
         };
 
     };
 
     const renderButtons = () => {
 
-        if (tasks.length === 0) {
-            return;
-        } else {
+        if (tasks.length > 0) {
             buttonsElement.innerHTML =
-            `<button class=\"section__buttons js-hideDoneTasks\">Ukryj zakończone</button><button class=\"section__buttons js-toggleAllTasksDone\">Ukończ wszystkie</button>`
+                `<button class=\"section__buttons js-hideDoneTasks\">${hideDoneTasks ? "Pokaż" : "Ukryj"} zakończone</button><button class=\"section__buttons js-toggleAllTasksDone\" ${tasks.every(({done}) => done) ? "disabled" : ""}>Ukończ wszystkie</button>`
+        } else {
+            buttonsElement.innerHTML = ""
         };
 
-        
+        bindEvents();
     };
 
     const render = () => {
